@@ -14,11 +14,11 @@
 
 ```bash
 # linux
-wget -O /usr/local/bin/stk xxxx
+wget -O /usr/local/bin/stk https://github.com/yecaowulei/sre-tool-kit/releases/download/v1.0.0/stk-latest-linux-amd64
 chmod +x /usr/local/bin/stk
 
 # windows
-curl -o stk.exe xxxx
+curl -o stk.exe https://github.com/yecaowulei/sre-tool-kit/releases/download/v1.0.0/stk-latest-windows64.exe
 ```
 
 ## 3. 帮助信息
