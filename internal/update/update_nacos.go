@@ -2,13 +2,14 @@ package update
 
 import (
 	"fmt"
-	"github.com/nacos-group/nacos-sdk-go/clients"
-	"github.com/nacos-group/nacos-sdk-go/common/constant"
-	"github.com/nacos-group/nacos-sdk-go/vo"
 	"log"
 	"os"
 	"path/filepath"
 	"strings"
+
+	"github.com/nacos-group/nacos-sdk-go/clients"
+	"github.com/nacos-group/nacos-sdk-go/common/constant"
+	"github.com/nacos-group/nacos-sdk-go/vo"
 )
 
 var (
@@ -23,6 +24,7 @@ type NacosData struct {
 	NacosPasswd       string
 	NacosNsGroup      string
 	NacosFileNameList string
+	NacosPort         uint64
 }
 
 func (d NacosData) Run() {
@@ -43,7 +45,7 @@ func (d NacosData) Run() {
 			Scheme:      d.NacosAddrScheme,
 			IpAddr:      d.NacosAddr,
 			ContextPath: "/nacos",
-			Port:        nacosPort,
+			Port:        d.NacosPort,
 		},
 	}
 
