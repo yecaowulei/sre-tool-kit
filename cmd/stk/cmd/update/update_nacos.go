@@ -18,6 +18,7 @@ var (
 	nacosPasswd        string
 	nacosNsGroup       string
 	nacosFileNameList  string
+	nacosPort          uint64
 	updateNacosDataCmd = &cobra.Command{
 		Use:     "nacos",
 		Short:   "update nacos file",
@@ -33,6 +34,7 @@ var (
 				NacosPasswd:       nacosPasswd,
 				NacosNsGroup:      nacosNsGroup,
 				NacosFileNameList: nacosFileNameList,
+				NacosPort:         nacosPort,
 			}
 			updater.Run()
 		},
@@ -48,5 +50,5 @@ func init() {
 	updateNacosDataCmd.PersistentFlags().StringVarP(&nacosPasswd, "nacos-passwd", "p", "", "nacos passwd")
 	updateNacosDataCmd.PersistentFlags().StringVarP(&nacosNsGroup, "nacos-ns-group", "g", defaultNacosGroup, "nacos namespace group")
 	updateNacosDataCmd.PersistentFlags().StringVarP(&nacosFileNameList, "nacos-filename-list", "f", "", "nacos file name list")
-
+	updateNacosDataCmd.PersistentFlags().Uint64VarP(&nacosPort, "nacos-port", "P", 80, "nacos server port")
 }
